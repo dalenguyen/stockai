@@ -5,10 +5,10 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="stockai",
-    version="0.0.1",
+    version="0.0.2",
     author="Dale Nguyen",
     author_email="dungnq@itbox4vn.com",
-    description="Stock price prediction",
+    description="Get stock info from Yahoo! Finance",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/dalenguyen/stockai",
