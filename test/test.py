@@ -18,7 +18,10 @@ class TestStock(TestCase):
 
     def test_td_financial_data(self):
         float(self.td.get_price())  
-        self.assertEqual(self.td.get_currency(), 'CAD')                
+        self.assertEqual(self.td.get_currency(), 'CAD')    
+
+    def test_td_historical_prices(self):
+        dict(self.td.get_historical_prices('2019-01-01', '2019-01-05'))
 
 if __name__ == "__main__":
     test_main()        

@@ -5,3 +5,5 @@ dist
 # Python environment
 venv
 __pycache__
+
+.idea
