@@ -1,5 +1,8 @@
 # Stock AI
 
+[![PyPI version](https://badge.fury.io/py/stockai.svg)](https://badge.fury.io/py/stockai)
+[![Build Status](https://travis-ci.org/dalenguyen/stockai.svg?branch=master)](https://travis-ci.org/dalenguyen/stockai)
+
 Python module to get stock data from Yahoo! Finance
 
 *This is an ongoing project. If you have any requests or contributions, please create a [ticket](https://github.com/dalenguyen/stockai/issues)*

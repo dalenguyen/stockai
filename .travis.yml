@@ -8,7 +8,8 @@ python:
   - "nightly"  # nightly build
 
 install:
-  - pip install -r requirements.txt
+  # - pip install -r requirements.txt
+  - python setup.py install
 
 script:
   - nosetests --with-coverage --cover-package=stockai
