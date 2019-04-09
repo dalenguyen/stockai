@@ -10,6 +10,7 @@ python:
 install:
   # - pip install -r requirements.txt
   - python setup.py install
+  - pip install coverage
 
 script:
   - nosetests --with-coverage --cover-package=stockai
