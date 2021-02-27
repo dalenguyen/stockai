@@ -2,7 +2,7 @@
 Stockai - get stock information from Yahoo! Finance
 """
 
-__version__ = '1.0.0'
+__version__ = '1.1.0'
 __author__ = 'Dale Nguyen'
 __name__ = 'stockai'
 

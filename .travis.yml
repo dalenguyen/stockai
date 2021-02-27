@@ -13,5 +13,4 @@ install:
   - pip install coverage
 
 script:
-  - nosetests --with-coverage --cover-package=stockai
-  - python -m unittest tests/*
+  - nosetests tests/* --with-coverage --cover-package=stockai

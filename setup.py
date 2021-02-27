@@ -1,4 +1,4 @@
-import setuptools
+from setuptools import setup, find_packages
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
@@ -9,16 +9,16 @@ with open("README.md", "r") as fh:
 # python setup.py sdist bdist_wheel
 # twine upload --skip-existing dist/*
 
-setuptools.setup(
+setup(
     name="stockai",
-    version="1.0.0",
+    version="1.1.0",
     author="Dale Nguyen",
-    author_email="dungnq@itbox4vn.com",
+    author_email="dale@dalenguyen.me",
     description="Get stock info from Yahoo! Finance",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/dalenguyen/stockai",
-    packages=setuptools.find_packages(),
+    packages=find_packages(),
     install_requires = [ 'ciso8601', 'requests', 'loguru' ],
     classifiers=[
         "Programming Language :: Python :: 3",
