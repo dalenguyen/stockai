@@ -11,11 +11,12 @@
 
 ---
 
-## [1.0.0] - 2021-02-26
+## [1.0.0] - 2021-02-27
 
 #### - :rocket: [New Feature]
 
 - Restructured projects
+- Added WealthSimple
 
 ## [0.0.4] - 2019-04-09
 

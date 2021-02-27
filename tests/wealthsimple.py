@@ -9,15 +9,15 @@ else:
 from stockai import WealthSimple
 
 
-class TestStock(TestCase):
+# class TestStock(TestCase):
 
-    def setUp(self):
-        self.ws = WealthSimple()    
+#     def setUp(self):
+#         self.ws = WealthSimple()
 
-    def test_td_summary_profile(self):
-        print(self.ws.test())
-        self.assertEqual(self.ws.test(), 'test')
+#     def test_td_summary_profile(self):
+#         print(self.ws.test())
+#         self.assertEqual(self.ws.test(), 'test')
 
 
-if __name__ == "__main__":
-    test_main()       
+# if __name__ == "__main__":
+#     test_main()
