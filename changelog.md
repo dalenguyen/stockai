@@ -11,6 +11,12 @@
 
 ---
 
+## [1.1.0] - 2021-02-27
+
+#### - :bug: [Bug Fix]
+
+- Fixed setup file
+
 ## [1.0.0] - 2021-02-27
 
 #### - :rocket: [New Feature]

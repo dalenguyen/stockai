@@ -26,7 +26,7 @@ source env/bin/activate
 pip3 install -r requirements.txt
 ```
 
-For MacOS, you may need to use this command in order eto install ciso8601
+For MacOS, you may need to use this command in order to install ciso8601
 
 ```
 ARCHFLAGS="-arch x86_64" pip install ciso8601
