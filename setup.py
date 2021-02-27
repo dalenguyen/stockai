@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 # Deploy to PyPI
 #
-# pip install twine
+# pip install twine wheel
 # python setup.py sdist bdist_wheel
 # twine upload --skip-existing dist/*
 

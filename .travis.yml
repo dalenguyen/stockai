@@ -14,3 +14,4 @@ install:
 
 script:
   - nosetests --with-coverage --cover-package=stockai
+  - python -m unittest tests/*
