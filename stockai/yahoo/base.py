@@ -1,5 +1,5 @@
 from requests import get
-from .utils import timestamp_to_date
+from ..utils import timestamp_to_date
 
 class Base(object):
     def __init__(self, symbol):

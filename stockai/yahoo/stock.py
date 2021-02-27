@@ -1,5 +1,5 @@
 from .base import Base
-from .utils import date_to_timestamp
+from ..utils import date_to_timestamp
 
 class Stock(Base):
     def __init__(self, symbol):
