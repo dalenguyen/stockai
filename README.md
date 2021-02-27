@@ -5,7 +5,7 @@
 
 Python module to get stock data from Yahoo! Finance
 
-*This is an ongoing project. If you have any requests or contributions, please create a [ticket](https://github.com/dalenguyen/stockai/issues)*
+_This is an ongoing project. If you have any requests or contributions, please create a [ticket](https://github.com/dalenguyen/stockai/issues)_
 
 ## Install
 
@@ -13,6 +13,29 @@ From PyPI with pip
 
 ```sh
 pip install stockai
+```
+
+## Development
+
+Create a virtual environment
+
+```
+python3 -m venv venv
+source env/bin/activate
+
+pip3 install -r requirements.txt
+```
+
+For MacOS, you may need to use this command in order eto install ciso8601
+
+```
+ARCHFLAGS="-arch x86_64" pip install ciso8601
+```
+
+## Running Tests
+
+```
+python -m unittest tests/*
 ```
 
 ## Usage examples
@@ -33,38 +56,38 @@ print(td.get_currency())
 td.get_historical_prices('2019-01-01', '2019-01-05')
 
 ### The result is a dictionary with ['volumn', 'low', 'open', 'hight', 'close', 'date', 'adjclose']
-{  
-   'volume':[  
+{
+   'volume':[
       3930300,
       5407700,
       5103400
    ],
-   'low':[  
+   'low':[
       67.12000274658203,
       67.12000274658203,
       67.66999816894531
    ],
-   'open':[  
+   'open':[
       67.51000213623047,
       68.11000061035156,
       68.0
    ],
-   'high':[  
+   'high':[
       68.43000030517578,
       68.11000061035156,
       68.1500015258789
    ],
-   'close':[  
+   'close':[
       68.25,
       67.30000305175781,
       67.9800033569336
    ],
-   'date':[  
+   'date':[
       '2019-01-02',
       '2019-01-03',
       '2019-01-04'
    ],
-   'adjclose':[  
+   'adjclose':[
       67.57575225830078,
       66.63513946533203,
       67.30841827392578
