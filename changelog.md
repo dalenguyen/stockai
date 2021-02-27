@@ -11,6 +11,12 @@
 
 ---
 
+## [1.0.0] - 2021-02-26
+
+#### - :rocket: [New Feature]
+
+- Restructured projects
+
 ## [0.0.4] - 2019-04-09
 
 #### - :rocket: [New Feature]

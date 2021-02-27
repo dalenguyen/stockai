@@ -2,8 +2,9 @@
 Stockai - get stock information from Yahoo! Finance
 """
 
-__version__ = '0.0.4'
+__version__ = '1.0.0'
 __author__ = 'Dale Nguyen'
 __name__ = 'stockai'
 
-from .stock import Stock
+from .yahoo.stock import Stock
+from .wealthsimple.stock import WealthSimple

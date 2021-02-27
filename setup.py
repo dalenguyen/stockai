@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="stockai",
-    version="0.0.4",
+    version="1.0.0",
     author="Dale Nguyen",
     author_email="dungnq@itbox4vn.com",
     description="Get stock info from Yahoo! Finance",
