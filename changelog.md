@@ -11,6 +11,20 @@
 
 ---
 
+## [1.5.0] - 2021-02-28
+
+#### - :rocket: [New Feature]
+
+- Added get_info method
+- Added interval (1d, 1w, 1m) when getting historical prices
+- Added WealthSimple refresh_tokens method
+
+#### - :nail_care: [Polish]
+
+- Push date to the first when getting historical prices
+- Removed meta from getting historical prices
+- Added functions documentation
+
 ## [1.4.0] - 2021-02-27
 
 #### - :bug: [Bug Fix]
