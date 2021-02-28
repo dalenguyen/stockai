@@ -11,6 +11,12 @@
 
 ---
 
+## [1.2.0] - 2021-02-27
+
+#### - :rocket: [New Feature]
+
+- Added all prices for a security (Yahoo)
+
 ## [1.1.0] - 2021-02-27
 
 #### - :bug: [Bug Fix]

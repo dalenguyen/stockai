@@ -18,9 +18,13 @@ class Stock(Base):
         return self.data_set['financialData']['financialCurrency']
 
     # Historical Prices
-    def get_historical_prices(self, start_date, end_date):        
+    def get_historical_prices(self, start_date, end_date):
         if (date_to_timestamp(start_date) > date_to_timestamp(end_date)):
             raise ValueError('Please check the order of start date and end date')
 
         return self.get_historical(date_to_timestamp(start_date), date_to_timestamp(end_date))
+
+    # Get all prices
+    def get_all_prices(self):
+      return self.get_all_historical()
 

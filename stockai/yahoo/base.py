@@ -16,17 +16,16 @@ class Base(object):
             includePrePost = includePrePost,
             interval = interval,
             range = range
-        )        
-
+        )
         return url
 
     def _request(self):
         url = self._prepare_request()
         data = get(url)
-        
+
         if data.json()['quoteSummary']['error'] is not None:
             raise NameError(data.json()['quoteSummary']['error']['description'])
-        
+
         return data.json()['quoteSummary']['result'][0]
 
     def get_historical(self, start_date, end_date):
@@ -36,21 +35,35 @@ class Base(object):
             end_date = end_date
         )
         data = get(url)
+        return self.__process_historical_result(data)
 
-        if data.json()['chart']['error'] is not None:
-            raise NameError(data.json()['chart']['error']['description'])
+    def get_all_historical(self):
+      url = 'https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?range=max'.format(
+        symbol = self.symbol
+      )
 
-        result = data.json()['chart']['result'][0]['indicators']['quote'][0]
-        result['date'] = data.json()['chart']['result'][0]['timestamp']
-        result['adjclose'] = data.json()['chart']['result'][0]['indicators']['adjclose'][0]['adjclose']
-
-        for index, date in enumerate(result['date']):
-            result['date'][index] = timestamp_to_date(result['date'][index])
-        
-        return result
+      data = get(url)
+      return self.__process_historical_result(data)
 
     def refresh(self):
         """
         Refresh stock data
         """
         self.data_set = self._request()
+
+    def __process_historical_result(self, data):
+      """
+      Process data from Yahoo
+      """
+      if data.json()['chart']['error'] is not None:
+          raise NameError(data.json()['chart']['error']['description'])
+
+      result = data.json()['chart']['result'][0]['indicators']['quote'][0]
+      result['date'] = data.json()['chart']['result'][0]['timestamp']
+      result['adjclose'] = data.json()['chart']['result'][0]['indicators']['adjclose'][0]['adjclose']
+      result['meta'] = data.json()['chart']['result'][0]['meta']
+
+      for index, date in enumerate(result['date']):
+          result['date'][index] = timestamp_to_date(result['date'][index])
+
+      return result
