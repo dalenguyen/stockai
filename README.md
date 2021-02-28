@@ -38,6 +38,13 @@ ARCHFLAGS="-arch x86_64" pip install ciso8601
 python -m unittest tests/*
 ```
 
+## Running Jupyter Notebook
+
+```
+pip install jupyter
+jupyter notebook
+```
+
 ## Usage examples
 
 ```python
@@ -83,9 +90,9 @@ td.get_historical_prices('2019-01-01', '2019-01-05')
       67.9800033569336
    ],
    'date':[
-      '2019-01-02',
-      '2019-01-03',
-      '2019-01-04'
+      1546439400,
+      1546525800,
+      1546612200
    ],
    'adjclose':[
       67.57575225830078,
@@ -94,3 +101,10 @@ td.get_historical_prices('2019-01-01', '2019-01-05')
    ]
 }
 ```
+
+## Disclaimer
+
+This project is for learning purpose. This is not intended to be investment advice for trading purposes.
+
+- USE AT YOUR OWN RISK.
+- DO NOT LEVERAGE THIS IN ATTEMPT TO DISRUPT ORDERLY MARKET FUNCTIONS.
