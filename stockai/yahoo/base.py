@@ -1,5 +1,5 @@
 from requests import get
-from ..utils import timestamp_to_date
+from ..utils import timestamp_to_date, get_current_timestamp
 
 class Base(object):
     def __init__(self, symbol):
@@ -38,12 +38,10 @@ class Base(object):
         return self.__process_historical_result(data)
 
     def get_all_historical(self):
-      url = 'https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?range=max'.format(
-        symbol = self.symbol
-      )
-
-      data = get(url)
-      return self.__process_historical_result(data)
+      # Start from 01/01/2000
+      start_date = 946702800
+      end_date = get_current_timestamp()
+      return self.get_historical(start_date, end_date)
 
     def refresh(self):
         """
@@ -63,7 +61,7 @@ class Base(object):
       result['adjclose'] = data.json()['chart']['result'][0]['indicators']['adjclose'][0]['adjclose']
       result['meta'] = data.json()['chart']['result'][0]['meta']
 
-      for index, date in enumerate(result['date']):
-          result['date'][index] = timestamp_to_date(result['date'][index])
+      # for index, date in enumerate(result['date']):
+      #     result['date'][index] = timestamp_to_date(result['date'][index])
 
       return result
