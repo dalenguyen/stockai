@@ -5,7 +5,7 @@ class Base(object):
     def __init__(self, symbol):
         self.symbol = symbol
 
-    def _prepare_request(self, region='US', lang='en-US', includePrePost='false', interval='2m', range='1d'):
+    def __prepare_request(self, region='US', lang='en-US', includePrePost='false', interval='2m', range='1d'):
         """
         Basic Yahoo Rquest URL
         """
@@ -19,8 +19,8 @@ class Base(object):
         )
         return url
 
-    def _request(self):
-        url = self._prepare_request()
+    def __request(self):
+        url = self.__prepare_request()
         data = get(url)
 
         if data.json()['quoteSummary']['error'] is not None:
@@ -50,7 +50,7 @@ class Base(object):
         """
         Refresh stock data
         """
-        self.data_set = self._request()
+        self.data_set = self.__request()
 
     def __process_historical_result(self, data):
       """
