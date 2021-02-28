@@ -1,5 +1,5 @@
 """
-StockAI v1.2.0
+StockAI
 
 Copyright (c) Dale Nguyen
 """

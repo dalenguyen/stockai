@@ -11,6 +11,18 @@
 
 ---
 
+## [1.4.0] - 2021-02-27
+
+#### - :bug: [Bug Fix]
+
+- Get all historical data since 01/01/2000
+
+## [1.3.0] - 2021-02-27
+
+#### - :nail_care: [Polish]
+
+- Use unix timestamp for date
+
 ## [1.2.0] - 2021-02-27
 
 #### - :rocket: [New Feature]

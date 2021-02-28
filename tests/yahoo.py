@@ -14,7 +14,7 @@ class TestStock(TestCase):
       self.td = Stock('TD.TO')
 
     def test_td_summary_profile(self):
-      print(self.td.get_summary_profile())
+      # print(self.td.get_summary_profile())
       self.assertEqual(self.td.get_summary_profile()['city'], 'Toronto')
 
     def test_td_financial_data(self):
