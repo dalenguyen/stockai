@@ -11,6 +11,18 @@
 
 ---
 
+## [1.5.0] - 2021-02-28
+
+#### - :rocket: [New Feature]
+
+- Added get_info method
+
+#### - :nail_care: [Polish]
+
+- Push date to the first when getting historical prices
+- Removed meta from getting historical prices
+- Added functions documentation
+
 ## [1.4.0] - 2021-02-27
 
 #### - :bug: [Bug Fix]

@@ -57,11 +57,11 @@ class Base(object):
           raise NameError(data.json()['chart']['error']['description'])
 
       result = data.json()['chart']['result'][0]['indicators']['quote'][0]
-      result['date'] = data.json()['chart']['result'][0]['timestamp']
+      date_data = { 'date' : data.json()['chart']['result'][0]['timestamp']}
       result['adjclose'] = data.json()['chart']['result'][0]['indicators']['adjclose'][0]['adjclose']
-      result['meta'] = data.json()['chart']['result'][0]['meta']
+      # result['meta'] = data.json()['chart']['result'][0]['meta']
 
       # for index, date in enumerate(result['date']):
       #     result['date'][index] = timestamp_to_date(result['date'][index])
 
-      return result
+      return {**date_data, **result}
