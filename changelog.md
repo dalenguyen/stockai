@@ -16,6 +16,7 @@
 #### - :rocket: [New Feature]
 
 - Added get_info method
+- Added interval (1d, 1w, 1m) when getting historical prices
 
 #### - :nail_care: [Polish]
 

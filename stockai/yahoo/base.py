@@ -28,20 +28,23 @@ class Base(object):
 
         return data.json()['quoteSummary']['result'][0]
 
-    def get_historical(self, start_date, end_date):
-        url = 'https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?formatted=true&period1={start_date}&period2={end_date}&interval=1d&events=div%7Csplit&corsDomain=finance.yahoo.com'.format(
+    def get_historical(self, start_date, end_date, interval):
+        interval = self.__get_interval(interval)
+
+        url = 'https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?formatted=true&period1={start_date}&period2={end_date}&interval={interval}&events=div%7Csplit&corsDomain=finance.yahoo.com'.format(
             symbol = self.symbol,
             start_date = start_date,
-            end_date = end_date
+            end_date = end_date,
+            interval = interval
         )
         data = get(url)
         return self.__process_historical_result(data)
 
-    def get_all_historical(self):
+    def get_all_historical(self, interval):
       # Start from 01/01/2000
       start_date = 946702800
       end_date = get_current_timestamp()
-      return self.get_historical(start_date, end_date)
+      return self.get_historical(start_date, end_date, interval)
 
     def refresh(self):
         """
@@ -65,3 +68,20 @@ class Base(object):
       #     result['date'][index] = timestamp_to_date(result['date'][index])
 
       return {**date_data, **result}
+
+    def __get_interval(self, interval):
+      """Return interval value before sending requests
+
+      Parameters
+      ----------
+      interval: 'daily' | 'weekly' | 'monthly'
+
+      Returns
+      ----------
+      '1d' | '1wk' | '1mo'
+      """
+      return {
+        'daily': '1d',
+        'weekly': '1wk',
+        'monthly': '1mo'
+      }[interval]

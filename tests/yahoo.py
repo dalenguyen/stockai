@@ -25,11 +25,11 @@ class TestStock(TestCase):
       self.assertEqual(self.td.get_currency(), 'CAD')
 
     def test_td_historical_prices(self):
-      # print(self.td.get_historical_prices('2019-01-01', '2019-01-05'))
+      # print(self.td.get_historical_prices('2019-01-01', '2019-01-30', interval='weekly'))
       dict(self.td.get_historical_prices('2019-01-01', '2019-01-05'))
 
     def test_td_all_historical_prices(self):
-      all = self.td.get_all_prices()
+      all = self.td.get_all_prices(interval='monthly')
       # print(all)
       dict(all)
 

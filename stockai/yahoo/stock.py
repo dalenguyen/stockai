@@ -22,21 +22,28 @@ class Stock(Base):
       """Return currency of a security"""
       return self.data_set['financialData']['financialCurrency']
 
-    def get_historical_prices(self, start_date, end_date):
+    def get_historical_prices(self, start_date, end_date, interval = 'daily'):
       """Return historical prices of a security
+
       Parameters
       ----------
       start_date: str
         Start date
       end_date: str
         End date
+      interval: 'daily' | 'weekly' | 'monthly' - Default is 'daily'
       """
       if (date_to_timestamp(start_date) > date_to_timestamp(end_date)):
           raise ValueError('Please check the order of start date and end date')
 
-      return self.get_historical(date_to_timestamp(start_date), date_to_timestamp(end_date))
+      return self.get_historical(date_to_timestamp(start_date), date_to_timestamp(end_date), interval)
 
-    def get_all_prices(self):
-      """Return all historical prices starting from 01/01/2000"""
-      return self.get_all_historical()
+    def get_all_prices(self, interval = 'monthly'):
+      """Return all historical prices starting from 01/01/2000
+
+      Parameters
+      ----------
+      interval: str 'daily' | 'weekly' | 'monthly' - Default is 'monthly'
+      """
+      return self.get_all_historical(interval)
 
